@@ -2,7 +2,7 @@
 
 一款简单实用的数字加减动画,支持UILabel、UIButton显示
 
-![image](https://github.com/jkpang/PPNetworkHelper/blob/master/network.gif)
+![image](https://github.com/jkpang/PPCounter/blob/master/PPCounter.gif)
 
 ##Requirements 要求
 * iOS 7+
