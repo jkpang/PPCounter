@@ -1,8 +1,10 @@
 # PPCounter
 
-一款简单实用的数字加减动画,支持UILabel、UIButton显示
+一款使用简单的数字加减动画控件,支持UILabel、UIButton显示
 
 ![image](https://github.com/jkpang/PPCounter/blob/master/PPCounter.gif)
+
+###[简书地址](http://www.jianshu.com/p/53b9bac43201)
 
 ##Requirements 要求
 * iOS 7+
@@ -14,6 +16,7 @@
 ###2.CocoaPods安装:
 first
 `pod 'PPCounter',:git => 'https://github.com/jkpang/PPCounter.git'`
+
 then
 `pod install或pod install --no-repo-update`
 
