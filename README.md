@@ -4,6 +4,12 @@
 
 ![image](https://github.com/jkpang/PPCounter/blob/master/PPCounter.gif)
 
+* 支持UILable/UIButton/自定义文本控件的数字加减动画;
+* 支持一般文本属性以及富文本属性的字体显示;
+* 支持四种时间曲线函数动画:由慢到快再到慢、由慢到特别快、由快到慢、匀速;
+* 支持自定义的文本格式,例如:数字格式化千分位显示;
+* 支持CocoaPods导入
+
 ###[简书地址](http://www.jianshu.com/p/53b9bac43201)
 
 ##Requirements 要求
