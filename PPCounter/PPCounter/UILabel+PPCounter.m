@@ -11,47 +11,34 @@
 
 @implementation UILabel (PPCounter)
 
-- (void)pp_fromZeroToNumber:(CGFloat)number formatBlock:(PPFormatBlock)formatBlock
-{
-    PPCounterAnimationType animationType = self.counterAnimationType ? self.counterAnimationType : PPCounterAnimationTypeEaseOut;
-    [self pp_fromNumber:0.f toNumber:number duration:1.5f animationType:animationType formatBlock:formatBlock completeBlock:nil];
-}
-
-- (void)pp_fromZeroToNumber:(CGFloat)number attributedFormatBlock:(PPAttributedFormatBlock)attributedFormatBlock
-{
-    PPCounterAnimationType animationType = self.counterAnimationType ? self.counterAnimationType : PPCounterAnimationTypeEaseOut;
-    [self pp_fromNumber:0.f toNumber:number duration:1.5f animationType:animationType attributedFormatBlock:attributedFormatBlock completeBlock:nil];
-}
-
-- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB formatBlock:(PPFormatBlock)formatBlock
-{
-    PPCounterAnimationType animationType = self.counterAnimationType ? self.counterAnimationType : PPCounterAnimationTypeEaseOut;
-    [self pp_fromNumber:numberA toNumber:numberB duration:1.5f animationType:animationType formatBlock:formatBlock completeBlock:nil];
-}
-
-- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB attributedFormatBlock:(PPAttributedFormatBlock)attributedFormatBlock
-{
-    PPCounterAnimationType animationType = self.counterAnimationType ? self.counterAnimationType : PPCounterAnimationTypeEaseOut;
-    [self pp_fromNumber:numberA toNumber:numberB duration:1.5f animationType:animationType attributedFormatBlock:attributedFormatBlock completeBlock:nil];
-}
-
 - (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration formatBlock:(PPFormatBlock)formatBlock
 {
-    PPCounterAnimationType animationType = self.counterAnimationType ? self.counterAnimationType : PPCounterAnimationTypeEaseOut;
-    [self pp_fromNumber:numberA toNumber:numberB duration:duration animationType:animationType formatBlock:formatBlock completeBlock:nil];
+    
+    [self pp_fromNumber:numberA toNumber:numberB duration:duration animationType:PPCounterAnimationTypeEaseOut formatBlock:formatBlock completeBlock:nil];
+}
+
+- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration formatBlock:(PPFormatBlock)formatBlock completeBlock:(PPCompletionBlock)completionBlock
+{
+    [self pp_fromNumber:numberA toNumber:numberB duration:duration animationType:PPCounterAnimationTypeEaseOut formatBlock:formatBlock completeBlock:completionBlock];
 }
 
 - (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration attributedFormatBlock:(PPAttributedFormatBlock)attributedFormatBlock
 {
-    PPCounterAnimationType animationType = self.counterAnimationType ? self.counterAnimationType : PPCounterAnimationTypeEaseOut;
-    [self pp_fromNumber:numberA toNumber:numberB duration:duration animationType:animationType attributedFormatBlock:attributedFormatBlock completeBlock:nil];
+    
+    [self pp_fromNumber:numberA toNumber:numberB duration:duration animationType:PPCounterAnimationTypeEaseOut attributedFormatBlock:attributedFormatBlock completeBlock:nil];
+}
+
+- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration attributedFormatBlock:(PPAttributedFormatBlock)attributedFormatBlock completeBlock:(PPCompletionBlock)completionBlock
+{
+    [self pp_fromNumber:numberA toNumber:numberB duration:duration animationType:PPCounterAnimationTypeEaseOut attributedFormatBlock:attributedFormatBlock completeBlock:completionBlock];
 }
 
 #pragma mark - normal font
 - (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration animationType:(PPCounterAnimationType)animationType formatBlock:(PPFormatBlock)formatBlock completeBlock:(PPCompletionBlock)completionBlock
 {
+    if (self.counterAnimationType) {animationType = self.counterAnimationType;}
     
-    [[PPCounter counter] fromNumber:numberA toNumber:numberB duration:duration animationType:animationType currentNumber:^(CGFloat number) {
+    [[PPCounterEngine counterEngine] fromNumber:numberA toNumber:numberB duration:duration animationType:animationType currentNumber:^(CGFloat number) {
         
         formatBlock ? self.text = formatBlock(number) : nil ;
         
@@ -62,7 +49,9 @@
 #pragma mark - attributed font
 - (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration animationType:(PPCounterAnimationType)animationType attributedFormatBlock:(PPAttributedFormatBlock)attributedFormatBlock completeBlock:(PPCompletionBlock)completionBlock
 {
-    [[PPCounter counter] fromNumber:numberA toNumber:numberB duration:duration animationType:animationType currentNumber:^(CGFloat number) {
+    if (self.counterAnimationType) {animationType = self.counterAnimationType;}
+    
+    [[PPCounterEngine counterEngine] fromNumber:numberA toNumber:numberB duration:duration animationType:animationType currentNumber:^(CGFloat number) {
         
         attributedFormatBlock ? self.attributedText = attributedFormatBlock(number) : nil ;
         

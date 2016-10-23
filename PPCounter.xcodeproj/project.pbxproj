@@ -14,7 +14,7 @@
 		226FB27A1DB2568D000BE4F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 226FB2791DB2568D000BE4F3 /* Assets.xcassets */; };
 		226FB27D1DB2568D000BE4F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226FB27B1DB2568D000BE4F3 /* LaunchScreen.storyboard */; };
 		226FB2881DB2568D000BE4F3 /* PPCounterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 226FB2871DB2568D000BE4F3 /* PPCounterTests.m */; };
-		226FB2951DB256CC000BE4F3 /* PPCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 226FB2941DB256CC000BE4F3 /* PPCounter.m */; };
+		226FB2951DB256CC000BE4F3 /* PPCounterEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 226FB2941DB256CC000BE4F3 /* PPCounterEngine.m */; };
 		226FB2981DB257E5000BE4F3 /* UILabel+PPCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 226FB2971DB257E5000BE4F3 /* UILabel+PPCounter.m */; };
 		22E75AD61DB51F950046E7D8 /* UIButton+PPCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E75AD51DB51F950046E7D8 /* UIButton+PPCounter.m */; };
 		22E75AD91DB520C80046E7D8 /* PPCounterConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E75AD81DB520C80046E7D8 /* PPCounterConst.m */; };
@@ -31,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22489AE01DBCE75000EFE361 /* PPCounter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPCounter.h; sourceTree = "<group>"; };
 		226FB26A1DB2568D000BE4F3 /* PPCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PPCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		226FB26E1DB2568D000BE4F3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		226FB2701DB2568D000BE4F3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -44,8 +45,8 @@
 		226FB2831DB2568D000BE4F3 /* PPCounterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PPCounterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		226FB2871DB2568D000BE4F3 /* PPCounterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCounterTests.m; sourceTree = "<group>"; };
 		226FB2891DB2568D000BE4F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		226FB2931DB256CC000BE4F3 /* PPCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCounter.h; sourceTree = "<group>"; };
-		226FB2941DB256CC000BE4F3 /* PPCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCounter.m; sourceTree = "<group>"; };
+		226FB2931DB256CC000BE4F3 /* PPCounterEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCounterEngine.h; sourceTree = "<group>"; };
+		226FB2941DB256CC000BE4F3 /* PPCounterEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCounterEngine.m; sourceTree = "<group>"; };
 		226FB2961DB257E5000BE4F3 /* UILabel+PPCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+PPCounter.h"; sourceTree = "<group>"; };
 		226FB2971DB257E5000BE4F3 /* UILabel+PPCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+PPCounter.m"; sourceTree = "<group>"; };
 		22E75AD41DB51F950046E7D8 /* UIButton+PPCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+PPCounter.h"; sourceTree = "<group>"; };
@@ -127,8 +128,9 @@
 		226FB2921DB256AB000BE4F3 /* PPCounter */ = {
 			isa = PBXGroup;
 			children = (
-				226FB2931DB256CC000BE4F3 /* PPCounter.h */,
-				226FB2941DB256CC000BE4F3 /* PPCounter.m */,
+				22489AE01DBCE75000EFE361 /* PPCounter.h */,
+				226FB2931DB256CC000BE4F3 /* PPCounterEngine.h */,
+				226FB2941DB256CC000BE4F3 /* PPCounterEngine.m */,
 				22E75AD71DB520C80046E7D8 /* PPCounterConst.h */,
 				22E75AD81DB520C80046E7D8 /* PPCounterConst.m */,
 				226FB2961DB257E5000BE4F3 /* UILabel+PPCounter.h */,
@@ -244,7 +246,7 @@
 				22E75AD61DB51F950046E7D8 /* UIButton+PPCounter.m in Sources */,
 				226FB2751DB2568D000BE4F3 /* ViewController.m in Sources */,
 				226FB2721DB2568D000BE4F3 /* AppDelegate.m in Sources */,
-				226FB2951DB256CC000BE4F3 /* PPCounter.m in Sources */,
+				226FB2951DB256CC000BE4F3 /* PPCounterEngine.m in Sources */,
 				226FB26F1DB2568D000BE4F3 /* main.m in Sources */,
 				22E75AD91DB520C80046E7D8 /* PPCounterConst.m in Sources */,
 				226FB2981DB257E5000BE4F3 /* UILabel+PPCounter.m in Sources */,

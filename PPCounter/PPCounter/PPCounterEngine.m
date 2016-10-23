@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PPCounter.h"
+#import "PPCounterEngine.h"
 
 /** 函数指针*/
 typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
 
 
-@interface PPCounter ()
+@interface PPCounterEngine ()
 /** 定时器*/
 @property (nonatomic, strong) CADisplayLink *timer;
 /** 开始的数字*/
@@ -38,7 +38,7 @@ typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
 
 @end
 
-@implementation PPCounter
+@implementation PPCounterEngine
 
 - (instancetype)init
 {
@@ -49,7 +49,7 @@ typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
     return self;
 }
 
-+ (instancetype)counter
++ (instancetype)counterEngine
 {
     return [[self alloc] init];
 }

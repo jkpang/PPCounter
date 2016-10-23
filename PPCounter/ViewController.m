@@ -7,8 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "UILabel+PPCounter.h"
-#import "UIButton+PPCounter.h"
+#import "PPCounter.h"
 
 @interface ViewController ()
 
@@ -55,9 +54,10 @@
     self.label1.counterAnimationType = animationType;
     
     // 开始计数
-    [self.label1 pp_fromZeroToNumber:50 formatBlock:^NSString *(CGFloat number) {
+    [self.label1 pp_fromNumber:0 toNumber:50 duration:1.5f formatBlock:^NSString *(CGFloat number) {
         return [NSString stringWithFormat:@"%.0f",number];
     }];
+    
 }
 
 - (void)exampleLabel2:(PPCounterAnimationType)animationType
@@ -87,14 +87,12 @@
 
     self.label3.counterAnimationType = animationType;
     
-    [self.label3 pp_fromZeroToNumber:2016101 formatBlock:^NSString *(CGFloat number) {
-        
+    [self.label3 pp_fromNumber:0 toNumber:2016101 duration:1.5f formatBlock:^NSString *(CGFloat number) {
         NSNumberFormatter *formatter = [NSNumberFormatter new];
         formatter.numberStyle = NSNumberFormatterDecimalStyle;
         formatter.positiveFormat = @"###,##0.00";
         NSNumber *amountNumber = [NSNumber numberWithFloat:number];
         return [NSString stringWithFormat:@"¥%@",[formatter stringFromNumber:amountNumber]];
-        
     }];
     
 }
@@ -106,9 +104,11 @@
     self.button1.counterAnimationType = animationType;
     
     // 开始计数
-    [self.button1 pp_fromZeroToNumber:50 formatBlock:^NSString *(CGFloat number) {
+    [self.button1 pp_fromNumber:0 toNumber:50 duration:1.5f formatBlock:^NSString *(CGFloat number) {
+        
         return [NSString stringWithFormat:@"%.0f",number];
     }];
+
 }
 
 - (void)exampleButton2:(PPCounterAnimationType)animationType
@@ -135,15 +135,15 @@
 {
     self.button3.counterAnimationType = animationType;
     
-    [self.button3 pp_fromZeroToNumber:2016101 formatBlock:^NSString *(CGFloat number) {
+    [self.button3 pp_fromNumber:0 toNumber:50 duration:1.5f formatBlock:^NSString *(CGFloat number) {
         
         NSNumberFormatter *formatter = [NSNumberFormatter new];
         formatter.numberStyle = NSNumberFormatterDecimalStyle;
         formatter.positiveFormat = @"###,##0.00";
         NSNumber *amountNumber = [NSNumber numberWithFloat:number];
         return [NSString stringWithFormat:@"¥%@",[formatter stringFromNumber:amountNumber]];
-        
     }];
+
 }
 
 
