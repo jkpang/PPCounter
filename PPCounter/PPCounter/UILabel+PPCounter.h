@@ -45,7 +45,10 @@
  @param duration    持续时间
  @param formatBlock 设置字体一般属性的Block
  */
-- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration formatBlock:(PPFormatBlock)formatBlock;
+- (void)pp_fromNumber:(CGFloat)numberA
+             toNumber:(CGFloat)numberB
+             duration:(CFTimeInterval)duration
+          formatBlock:(PPFormatBlock)formatBlock;
 
 /**
  1.正常字体属性UILabel中的数字在指定时间从 numberA -> numberB,
@@ -57,7 +60,11 @@
  @param formatBlock     设置一般字体的Block
  @param completionBlock 完成的Block
  */
-- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration formatBlock:(PPFormatBlock)formatBlock completeBlock:(PPCompletionBlock)completionBlock;
+- (void)pp_fromNumber:(CGFloat)numberA
+             toNumber:(CGFloat)numberB
+             duration:(CFTimeInterval)duration
+          formatBlock:(PPFormatBlock)formatBlock
+        completeBlock:(PPCompletionBlock)completionBlock;
 
 /**
  1.正常字体属性UILabel中的数字在指定时间从 numberA -> numberB,
@@ -71,7 +78,12 @@
  @param formatBlock     设置字体一般属性的block
  @param completionBlock 完成的block
  */
-- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration animationType:(PPCounterAnimationType)animationType formatBlock:(PPFormatBlock)formatBlock completeBlock:(PPCompletionBlock)completionBlock;
+- (void)pp_fromNumber:(CGFloat)numberA
+             toNumber:(CGFloat)numberB
+             duration:(CFTimeInterval)duration
+        animationType:(PPCounterAnimationType)animationType
+          formatBlock:(PPFormatBlock)formatBlock
+        completeBlock:(PPCompletionBlock)completionBlock;
 
 
 #pragma mark - attributed
@@ -84,7 +96,10 @@
  @param duration              持续时间
  @param attributedFormatBlock 设置富文本字体属性的Block
  */
-- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration attributedFormatBlock:(PPAttributedFormatBlock)attributedFormatBlock;
+- (void)pp_fromNumber:(CGFloat)numberA
+             toNumber:(CGFloat)numberB
+             duration:(CFTimeInterval)duration
+attributedFormatBlock:(PPAttributedFormatBlock)attributedFormatBlock;
 
 /**
  1.富文本字体属性UILabel中的数字在指定时间从 numberA -> numberB,
@@ -96,7 +111,11 @@
  @param attributedFormatBlock 设置富文本字体属性的Block
  @param completionBlock       完成的Block
  */
-- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration attributedFormatBlock:(PPAttributedFormatBlock)attributedFormatBlock completeBlock:(PPCompletionBlock)completionBlock;
+- (void)pp_fromNumber:(CGFloat)numberA
+             toNumber:(CGFloat)numberB
+             duration:(CFTimeInterval)duration
+attributedFormatBlock:(PPAttributedFormatBlock)attributedFormatBlock
+        completeBlock:(PPCompletionBlock)completionBlock;
 
 /**
  1.富文本字体属性UILabel中的数字在指定时间从 numberA -> numberB,
@@ -110,6 +129,11 @@
  @param attributedFormatBlock 设置富文本字体属性的Block
  @param completionBlock       完成的Block
  */
-- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration animationType:(PPCounterAnimationType)animationType attributedFormatBlock:(PPAttributedFormatBlock)attributedFormatBlock completeBlock:(PPCompletionBlock)completionBlock;
+- (void)pp_fromNumber:(CGFloat)numberA
+             toNumber:(CGFloat)numberB
+             duration:(CFTimeInterval)duration
+        animationType:(PPCounterAnimationType)animationType
+attributedFormatBlock:(PPAttributedFormatBlock)attributedFormatBlock
+        completeBlock:(PPCompletionBlock)completionBlock;
 
 @end

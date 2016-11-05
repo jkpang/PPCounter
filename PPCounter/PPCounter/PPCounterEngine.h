@@ -44,6 +44,11 @@
  @param numberBlock     当前数字的回调
  @param completionBlock 已完成的回调
  */
-- (void)fromNumber:(CGFloat)starNumer toNumber:(CGFloat)endNumber duration:(CFTimeInterval)duration animationType:(PPCounterAnimationType)animationType currentNumber:(PPCurrentNumberBlock)numberBlock complete:(PPCompletionBlock)completionBlock;
+- (void)fromNumber:(CGFloat)starNumer
+          toNumber:(CGFloat)endNumber
+          duration:(CFTimeInterval)duration
+     animationType:(PPCounterAnimationType)animationType
+     currentNumber:(PPCurrentNumberBlock)numberBlock
+          complete:(PPCompletionBlock)completionBlock;
 
 @end

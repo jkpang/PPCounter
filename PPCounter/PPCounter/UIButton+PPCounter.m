@@ -34,7 +34,12 @@
 }
 
 #pragma mark - normal font
-- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration animationType:(PPCounterAnimationType)animationType formatBlock:(PPFormatBlock)formatBlock completeBlock:(PPCompletionBlock)completionBlock
+- (void)pp_fromNumber:(CGFloat)numberA
+             toNumber:(CGFloat)numberB
+             duration:(CFTimeInterval)duration
+        animationType:(PPCounterAnimationType)animationType
+          formatBlock:(PPFormatBlock)formatBlock
+        completeBlock:(PPCompletionBlock)completionBlock
 {
     if (self.counterAnimationType) {animationType = self.counterAnimationType;}
     
@@ -47,7 +52,12 @@
 }
 
 #pragma mark - attributed font
-- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration animationType:(PPCounterAnimationType)animationType attributedFormatBlock:(PPAttributedFormatBlock)attributedFormatBlock completeBlock:(PPCompletionBlock)completionBlock
+- (void)pp_fromNumber:(CGFloat)numberA
+             toNumber:(CGFloat)numberB
+             duration:(CFTimeInterval)duration
+        animationType:(PPCounterAnimationType)animationType
+attributedFormatBlock:(PPAttributedFormatBlock)attributedFormatBlock
+        completeBlock:(PPCompletionBlock)completionBlock
 {
     if (self.counterAnimationType) {animationType = self.counterAnimationType;}
     

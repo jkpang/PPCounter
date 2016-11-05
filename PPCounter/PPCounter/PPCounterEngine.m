@@ -54,7 +54,12 @@ typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
     return [[self alloc] init];
 }
 
-- (void)fromNumber:(CGFloat)starNumer toNumber:(CGFloat)endNumber duration:(CFTimeInterval)durationTime animationType:(PPCounterAnimationType)animationType currentNumber:(PPCurrentNumberBlock)numberBlock complete:(PPCompletionBlock)completionBlock
+- (void)fromNumber:(CGFloat)starNumer
+          toNumber:(CGFloat)endNumber
+          duration:(CFTimeInterval)durationTime
+     animationType:(PPCounterAnimationType)animationType
+     currentNumber:(PPCurrentNumberBlock)numberBlock
+          complete:(PPCompletionBlock)completionBlock
 {
     // 开始前清空定时器
     [self cleanTimer];
