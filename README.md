@@ -1,5 +1,5 @@
 # PPCounter
-![](https://img.shields.io/badge/platform-iOS-red.svg)   ![](https://img.shields.io/badge/language-Objective--C-orange.svg)  ![](https://img.shields.io/badge/pod-v0.1.1-blue.svg) ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)  ![](https://img.shields.io/badge/weibo-%40CoderPang-yellow.svg)
+![](https://img.shields.io/badge/platform-iOS-red.svg)   ![](https://img.shields.io/badge/language-Objective--C-orange.svg)  ![](https://img.shields.io/badge/pod-v0.1.1-blue.svg) ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)  [![](https://img.shields.io/badge/weibo-%40CoderPang-yellow.svg)](http://weibo.com/5743737098/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1)
 
 一款使用简单的数字加减动画控件,支持UILabel、UIButton显示
 
