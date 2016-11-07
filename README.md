@@ -1,4 +1,5 @@
 # PPCounter
+![](https://img.shields.io/badge/platform-iOS-red.svg)   ![](https://img.shields.io/badge/language-Objective--C-orange.svg)  ![](https://img.shields.io/badge/pod-v0.1.1-blue.svg) ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)  ![](https://img.shields.io/badge/weibo-%40CoderPang-yellow.svg)
 
 一款使用简单的数字加减动画控件,支持UILabel、UIButton显示
 
