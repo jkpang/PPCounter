@@ -1,9 +1,10 @@
-# PPCounter
+![](https://github.com/jkpang/PPCounter/blob/master/Picture/PPCounter.png)
+
 ![](https://img.shields.io/badge/platform-iOS-red.svg)   ![](https://img.shields.io/badge/language-Objective--C-orange.svg)  ![](https://img.shields.io/badge/pod-v0.1.1-blue.svg) ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)  [![](https://img.shields.io/badge/weibo-%40CoderPang-yellow.svg)](http://weibo.com/5743737098/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1)
 
 一款使用简单的数字加减动画控件,支持UILabel、UIButton显示
 
-![image](https://github.com/jkpang/PPCounter/blob/master/PPCounter.gif)
+![image](https://github.com/jkpang/PPCounter/blob/master/Picture/PPCounter.gif)
 
 * 支持UILable/UIButton/自定义文本控件的数字加减动画;
 * 支持一般文本属性以及富文本属性的字体显示;
