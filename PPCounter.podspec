@@ -2,8 +2,8 @@
 Pod::Spec.new do |s|
 
   s.name         = "PPCounter"
-  s.version      = "0.1.1"
-  s.summary      = "一款使用简单的数字加减动画控件,支持UILabel、UIButton显示"
+  s.version      = "0.2.0"
+  s.summary      = "一款优雅的数字/金额增减动效控件,支持UILabel、UIButton显示"
 
   s.homepage     = "https://github.com/jkpang/PPCounter.git"
  
