@@ -30,7 +30,7 @@
 @interface UIButton (PPCounter)
 
 /** 动画类型*/
-@property (nonatomic, assign) PPCounterAnimationType counterAnimationType;
+@property (nonatomic, assign) PPCounterAnimationOptions animationOptions;
 
 #pragma mark - normal
 
@@ -40,47 +40,47 @@
  @param numberA     开始的数字
  @param numberB     结束的数字
  @param duration    持续时间
- @param formatBlock 设置字体一般属性的Block
+ @param format      设置字体一般属性的Block
  */
 - (void)pp_fromNumber:(CGFloat)numberA
              toNumber:(CGFloat)numberB
              duration:(CFTimeInterval)duration
-          formatBlock:(PPFormatBlock)formatBlock;
+               format:(PPFormatBlock)format;
 
 /**
  1.正常字体属性UIButton中的数字在指定时间从 numberA -> numberB,
  2.有结束回调
  
- @param numberA         开始的数字
- @param numberB         结束的数字
- @param duration        持续时间
- @param formatBlock     设置一般字体的Block
- @param completionBlock 完成的Block
+ @param numberA    开始的数字
+ @param numberB    结束的数字
+ @param duration   持续时间
+ @param format     设置一般字体的Block
+ @param completion 完成的Block
  */
 - (void)pp_fromNumber:(CGFloat)numberA
              toNumber:(CGFloat)numberB
              duration:(CFTimeInterval)duration
-          formatBlock:(PPFormatBlock)formatBlock
-        completeBlock:(PPCompletionBlock)completionBlock;
+               format:(PPFormatBlock)format
+           completion:(PPCompletionBlock)completion;
 
 /**
  1.正常字体属性UIButton中的数字在指定时间从 numberA -> numberB,
  2.可设置动画类型,
  3.有结束回调
  
- @param numberA         开始的数字
- @param numberB         结束的数字
- @param duration        持续时间
- @param animationType   动画类型
- @param formatBlock     设置字体一般属性的block
- @param completionBlock 完成的block
+ @param numberA             开始的数字
+ @param numberB             结束的数字
+ @param duration            持续时间
+ @param animationOptions    动画类型
+ @param format              设置字体一般属性的block
+ @param completion          完成的block
  */
 - (void)pp_fromNumber:(CGFloat)numberA
              toNumber:(CGFloat)numberB
              duration:(CFTimeInterval)duration
-        animationType:(PPCounterAnimationType)animationType
-          formatBlock:(PPFormatBlock)formatBlock
-        completeBlock:(PPCompletionBlock)completionBlock;
+     animationOptions:(PPCounterAnimationOptions)animationOptions
+               format:(PPFormatBlock)format
+           completion:(PPCompletionBlock)completion;
 
 
 #pragma mark - attributed
@@ -91,46 +91,46 @@
  @param numberA               开始的数字
  @param numberB               结束的数字
  @param duration              持续时间
- @param attributedFormatBlock 设置富文本字体属性的Block
+ @param attributedFormat 设置富文本字体属性的Block
  */
 - (void)pp_fromNumber:(CGFloat)numberA
              toNumber:(CGFloat)numberB
              duration:(CFTimeInterval)duration
-attributedFormatBlock:(PPAttributedFormatBlock)attributedFormatBlock;
+     attributedFormat:(PPAttributedFormatBlock)attributedFormat;
 
 /**
  1.富文本字体属性UIButton中的数字在指定时间从 numberA -> numberB,
  2.有结束回调
  
- @param numberA               开始的数字
- @param numberB               结束的数字
- @param duration              持续时间
- @param attributedFormatBlock 设置富文本字体属性的Block
- @param completionBlock       完成的Block
+ @param numberA          开始的数字
+ @param numberB          结束的数字
+ @param duration         持续时间
+ @param attributedFormat 设置富文本字体属性的Block
+ @param completion       完成的Block
  */
 - (void)pp_fromNumber:(CGFloat)numberA
              toNumber:(CGFloat)numberB
              duration:(CFTimeInterval)duration
-attributedFormatBlock:(PPAttributedFormatBlock)attributedFormatBlock
-        completeBlock:(PPCompletionBlock)completionBlock;
+     attributedFormat:(PPAttributedFormatBlock)attributedFormat
+           completion:(PPCompletionBlock)completion;
 
 /**
  1.富文本字体属性UIButton中的数字在指定时间从 numberA -> numberB,
  2.可设置动画类型,
  3.有结束回调
  
- @param numberA               开始的数字
- @param numberB               结束的数字
- @param duration              持续时间
- @param animationType         动画类型
- @param attributedFormatBlock 设置富文本字体属性的Block
- @param completionBlock       完成的Block
+ @param numberA            开始的数字
+ @param numberB            结束的数字
+ @param duration           持续时间
+ @param animationOptions   动画类型
+ @param attributedFormat   设置富文本字体属性的Block
+ @param completion         完成的Block
  */
 - (void)pp_fromNumber:(CGFloat)numberA
              toNumber:(CGFloat)numberB
              duration:(CFTimeInterval)duration
-        animationType:(PPCounterAnimationType)animationType
-attributedFormatBlock:(PPAttributedFormatBlock)attributedFormatBlock
-        completeBlock:(PPCompletionBlock)completionBlock;
+     animationOptions:(PPCounterAnimationOptions)animationOptions
+     attributedFormat:(PPAttributedFormatBlock)attributedFormat
+           completion:(PPCompletionBlock)completion;
 
 @end

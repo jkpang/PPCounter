@@ -1,6 +1,6 @@
 ![](https://github.com/jkpang/PPCounter/blob/master/Picture/PPCounter.png)
 
-![](https://img.shields.io/badge/platform-iOS-red.svg)   ![](https://img.shields.io/badge/language-Objective--C-orange.svg)  ![](https://img.shields.io/badge/pod-v0.1.1-blue.svg) ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)  [![](https://img.shields.io/badge/weibo-%40CoderPang-yellow.svg)](http://weibo.com/5743737098/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1)
+![](https://img.shields.io/badge/platform-iOS-red.svg)   ![](https://img.shields.io/badge/language-Objective--C-orange.svg)  ![](https://img.shields.io/badge/pod-v0.2.0-blue.svg) ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)  [![](https://img.shields.io/badge/weibo-%40CoderPang-yellow.svg)](http://weibo.com/5743737098/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1)
 
 一款使用简单的数字加减动画控件,支持UILabel、UIButton显示
 
@@ -38,10 +38,10 @@ then
 ####1.1 设置一般字体属性UILabel
 ```objc
 ....
-[label pp_fromNumber:0 toNumber:100 duration:1.5 animationType:PPCounterAnimationTypeEaseOut formatBlock:^NSString *(CGFloat number) {
+[label pp_fromNumber:0 toNumber:100 duration:1.5 animationOptions:PPCounterAnimationOptionCurveEaseOut format:^NSString *(CGFloat number) {
     // 此处自由拼接内容
     return [NSString stringWithFormat:@"%.2f",number];
-} completeBlock:^{
+} completion:^{
         
     // 完成的回调
 }];
@@ -50,12 +50,12 @@ then
 
 ```objc
 ....
-[label pp_fromNumber:0 toNumber:100 duration:1.5 animationType:PPCounterAnimationTypeEaseOut attributedFormatBlock:^NSAttributedString *(CGFloat number) {
+[label pp_fromNumber:0 toNumber:100 duration:1.5 animationOptions:PPCounterAnimationOptionCurveEaseOut attributedFormat:^NSAttributedString *(CGFloat number) {
         
     // 此处自由设置富文本属性的内容
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@""];
     return attributedString;
-} completeBlock:^{
+} completion:^{
         
     // 完成的回调
 }];
@@ -66,10 +66,10 @@ then
 ####1.1 设置一般字体属性UIButton
 ```objc
 ....
-[button pp_fromNumber:0 toNumber:100 duration:1.5 animationType:PPCounterAnimationTypeEaseOut formatBlock:^NSString *(CGFloat number) {
+[button pp_fromNumber:0 toNumber:100 duration:1.5 animationOptions:PPCounterAnimationOptionCurveEaseOut format:^NSString *(CGFloat number) {
     // 此处自由拼接内容
     return [NSString stringWithFormat:@"%.2f",number];
-} completeBlock:^{
+} completion:^{
         
     // 完成的回调
 }];
@@ -78,12 +78,12 @@ then
 
 ```objc
 ....
-[button pp_fromNumber:0 toNumber:100 duration:1.5 animationType:PPCounterAnimationTypeEaseOut attributedFormatBlock:^NSAttributedString *(CGFloat number) {
+[button pp_fromNumber:0 toNumber:100 duration:1.5 animationOptions:PPCounterAnimationOptionCurveEaseOut attributedFormat:^NSAttributedString *(CGFloat number) {
         
     // 此处自由设置富文本属性的内容
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@""];
     return attributedString;
-} completeBlock:^{
+} completion:^{
         
     // 完成的回调
 }];
@@ -95,6 +95,7 @@ then
 ###你的star是我持续更新的动力!
 ===
 ##CocoaPods更新日志
+* 2017.01.07(tag:0.2.0)--优化代码命名规范;
 * 2016.10.23(tag:0.1.1)--优化代码结构与调用API方法;
 * 2016.10.19(tag:0.1.0)--初始化到CocoaPods;
 

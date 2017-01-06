@@ -27,7 +27,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-UIKIT_EXTERN NSString *const kPPCounterAnimationType;
+UIKIT_EXTERN NSString *const kPPCounterAnimationOptions;
 
 typedef void(^PPCompletionBlock)(void);
 
@@ -37,13 +37,16 @@ typedef NSString *(^PPFormatBlock)(CGFloat number);
 
 typedef NSAttributedString *(^PPAttributedFormatBlock)(CGFloat number);
 
-typedef NS_ENUM(NSUInteger, PPCounterAnimationType) {
-    /** 由快到慢*/
-    PPCounterAnimationTypeEaseOut = 1,
-    /** 由慢到快*/
-    PPCounterAnimationTypeEaseIn,
+typedef NS_ENUM(NSUInteger, PPCounterAnimationOptions) {
     /** 由慢到快,再由快到慢*/
-    PPCounterAnimationTypeEaseInOut,
+    PPCounterAnimationOptionCurveEaseInOut = 1,
+    /** 由慢到快*/
+    PPCounterAnimationOptionCurveEaseIn,
+    /** 由快到慢*/
+    PPCounterAnimationOptionCurveEaseOut,
     /** 匀速*/
-    PPCounterAnimationTypeLinear
+    PPCounterAnimationOptionCurveLinear
 };
+
+
+

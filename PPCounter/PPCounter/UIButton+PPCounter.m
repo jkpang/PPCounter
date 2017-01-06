@@ -11,43 +11,42 @@
 
 @implementation UIButton (PPCounter)
 
-- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration formatBlock:(PPFormatBlock)formatBlock
+- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration format:(PPFormatBlock)format
+{
+    [self pp_fromNumber:numberA toNumber:numberB duration:duration animationOptions:PPCounterAnimationOptionCurveEaseInOut format:format completion:nil];
+}
+
+- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration format:(PPFormatBlock)format completion:(PPCompletionBlock)completion
+{
+    [self pp_fromNumber:numberA toNumber:numberB duration:duration animationOptions:PPCounterAnimationOptionCurveEaseInOut format:format completion:completion];
+}
+
+- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration attributedFormat:(PPAttributedFormatBlock)attributedFormat
 {
     
-    [self pp_fromNumber:numberA toNumber:numberB duration:duration animationType:PPCounterAnimationTypeEaseOut formatBlock:formatBlock completeBlock:nil];
+    [self pp_fromNumber:numberA toNumber:numberB duration:duration animationOptions:PPCounterAnimationOptionCurveEaseInOut attributedFormat:attributedFormat completion:nil];
 }
 
-- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration formatBlock:(PPFormatBlock)formatBlock completeBlock:(PPCompletionBlock)completionBlock
+- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration attributedFormat:(PPAttributedFormatBlock)attributedFormat completion:(PPCompletionBlock)completion
 {
-    [self pp_fromNumber:numberA toNumber:numberB duration:duration animationType:PPCounterAnimationTypeEaseOut formatBlock:formatBlock completeBlock:completionBlock];
-}
-
-- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration attributedFormatBlock:(PPAttributedFormatBlock)attributedFormatBlock
-{
-    
-    [self pp_fromNumber:numberA toNumber:numberB duration:duration animationType:PPCounterAnimationTypeEaseOut attributedFormatBlock:attributedFormatBlock completeBlock:nil];
-}
-
-- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration attributedFormatBlock:(PPAttributedFormatBlock)attributedFormatBlock completeBlock:(PPCompletionBlock)completionBlock
-{
-    [self pp_fromNumber:numberA toNumber:numberB duration:duration animationType:PPCounterAnimationTypeEaseOut attributedFormatBlock:attributedFormatBlock completeBlock:completionBlock];
+    [self pp_fromNumber:numberA toNumber:numberB duration:duration animationOptions:PPCounterAnimationOptionCurveEaseInOut attributedFormat:attributedFormat completion:completion];
 }
 
 #pragma mark - normal font
 - (void)pp_fromNumber:(CGFloat)numberA
              toNumber:(CGFloat)numberB
              duration:(CFTimeInterval)duration
-        animationType:(PPCounterAnimationType)animationType
-          formatBlock:(PPFormatBlock)formatBlock
-        completeBlock:(PPCompletionBlock)completionBlock
+     animationOptions:(PPCounterAnimationOptions)animationOptions
+               format:(PPFormatBlock)format
+           completion:(PPCompletionBlock)completion
 {
-    if (self.counterAnimationType) {animationType = self.counterAnimationType;}
+    if (self.animationOptions) {animationOptions = self.animationOptions;}
     
-    [[PPCounterEngine counterEngine] fromNumber:numberA toNumber:numberB duration:duration animationType:animationType currentNumber:^(CGFloat number) {
+    [[PPCounterEngine counterEngine] fromNumber:numberA toNumber:numberB duration:duration animationOptions:animationOptions currentNumber:^(CGFloat number) {
         
-        formatBlock ? [self setTitle:formatBlock(number) forState:UIControlStateNormal] : nil ;
+        format ? [self setTitle:format(number) forState:UIControlStateNormal] : nil ;
         
-    } complete:completionBlock];
+    } completion:completion];
     
 }
 
@@ -55,28 +54,28 @@
 - (void)pp_fromNumber:(CGFloat)numberA
              toNumber:(CGFloat)numberB
              duration:(CFTimeInterval)duration
-        animationType:(PPCounterAnimationType)animationType
-attributedFormatBlock:(PPAttributedFormatBlock)attributedFormatBlock
-        completeBlock:(PPCompletionBlock)completionBlock
+     animationOptions:(PPCounterAnimationOptions)animationOptions
+     attributedFormat:(PPAttributedFormatBlock)attributedFormat
+           completion:(PPCompletionBlock)completion
 {
-    if (self.counterAnimationType) {animationType = self.counterAnimationType;}
+    if (self.animationOptions) {animationOptions = self.animationOptions;}
     
-    [[PPCounterEngine counterEngine] fromNumber:numberA toNumber:numberB duration:duration animationType:animationType currentNumber:^(CGFloat number) {
+    [[PPCounterEngine counterEngine] fromNumber:numberA toNumber:numberB duration:duration animationOptions:animationOptions currentNumber:^(CGFloat number) {
         
-        attributedFormatBlock ? [self setAttributedTitle:attributedFormatBlock(number) forState:UIControlStateNormal] : nil ;
+        attributedFormat ? [self setAttributedTitle:attributedFormat(number) forState:UIControlStateNormal] : nil ;
         
-    } complete:completionBlock];
+    } completion:completion];
 }
 
 #pragma mark - setter/getter
 
-- (void)setCounterAnimationType:(PPCounterAnimationType)counterAnimationType
+- (void)setAnimationOptions:(PPCounterAnimationOptions)animationOptions
 {
-    objc_setAssociatedObject(self, &kPPCounterAnimationType, @(counterAnimationType), OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, &kPPCounterAnimationOptions, @(animationOptions), OBJC_ASSOCIATION_ASSIGN);
 }
 
-- (PPCounterAnimationType)counterAnimationType
+- (PPCounterAnimationOptions)animationOptions
 {
-    return [objc_getAssociatedObject(self, &kPPCounterAnimationType) integerValue];
+    return [objc_getAssociatedObject(self, &kPPCounterAnimationOptions) integerValue];
 }
 @end

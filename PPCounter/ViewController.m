@@ -44,7 +44,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self change:PPCounterAnimationTypeEaseOut];
+    [self change:PPCounterAnimationOptionCurveEaseInOut];
 }
 
 
@@ -53,37 +53,37 @@
     [self change:sender.selectedSegmentIndex+1];
 }
 
-- (void)change:(PPCounterAnimationType)animationType
+- (void)change:(PPCounterAnimationOptions)animationOptions
 {
-    [self exampleLabel1:animationType];
-    [self exampleLabel2:animationType];
-    [self exampleLabel3:animationType];
+    [self exampleLabel1:animationOptions];
+    [self exampleLabel2:animationOptions];
+    [self exampleLabel3:animationOptions];
     
-    [self exampleButton1:animationType];
-    [self exampleButton2:animationType];
-    [self exampleButton3:animationType];
+    [self exampleButton1:animationOptions];
+    [self exampleButton2:animationOptions];
+    [self exampleButton3:animationOptions];
 }
 
 #pragma mark - UIlabel
 
-- (void)exampleLabel1:(PPCounterAnimationType)animationType
+- (void)exampleLabel1:(PPCounterAnimationOptions)animationOptions
 {
     // 设置动画类型
-    self.label1.counterAnimationType = animationType;
+    self.label1.animationOptions = animationOptions;
     
     // 开始计数
-    [self.label1 pp_fromNumber:0 toNumber:50 duration:1.5f formatBlock:^NSString *(CGFloat number) {
+    [self.label1 pp_fromNumber:0 toNumber:50 duration:1.5f format:^NSString *(CGFloat number) {
         return [NSString stringWithFormat:@"%.0f",number];
     }];
     
 }
 
-- (void)exampleLabel2:(PPCounterAnimationType)animationType
+- (void)exampleLabel2:(PPCounterAnimationOptions)animationOptions
 {
 
-    self.label2.counterAnimationType = animationType;
+    self.label2.animationOptions = animationOptions;
     
-    [self.label2 pp_fromNumber:0 toNumber:100 duration:1.5 animationType:animationType attributedFormatBlock:^NSAttributedString *(CGFloat number) {
+    [self.label2 pp_fromNumber:0 toNumber:100 duration:1.5 animationOptions:animationOptions attributedFormat:^NSAttributedString *(CGFloat number) {
         
         NSString *string = [NSString stringWithFormat:@"%ld%%",(NSInteger)number];
         NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string];
@@ -92,7 +92,7 @@
         [attributedString addAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:22],NSForegroundColorAttributeName:[UIColor brownColor]} range:range];
         return attributedString;
         
-    } completeBlock:^{
+    } completion:^{
         
         self.label2.textColor = [UIColor redColor];
         
@@ -100,12 +100,12 @@
     
 }
 
-- (void)exampleLabel3:(PPCounterAnimationType)animationType
+- (void)exampleLabel3:(PPCounterAnimationOptions)animationOptions
 {
 
-    self.label3.counterAnimationType = animationType;
+    self.label3.animationOptions = animationOptions;
     
-    [self.label3 pp_fromNumber:0 toNumber:2016101 duration:1.5f formatBlock:^NSString *(CGFloat number) {
+    [self.label3 pp_fromNumber:0 toNumber:2016101 duration:1.5f format:^NSString *(CGFloat number) {
         NSNumberFormatter *formatter = [NSNumberFormatter new];
         formatter.numberStyle = NSNumberFormatterDecimalStyle;
         formatter.positiveFormat = @"###,##0.00";
@@ -116,24 +116,24 @@
 }
 
 #pragma mark - UIButton
-- (void)exampleButton1:(PPCounterAnimationType)animationType
+- (void)exampleButton1:(PPCounterAnimationOptions)animationOptions
 {
     // 设置动画类型
-    self.button1.counterAnimationType = animationType;
+    self.button1.animationOptions = animationOptions;
     
     // 开始计数
-    [self.button1 pp_fromNumber:0 toNumber:50 duration:1.5f formatBlock:^NSString *(CGFloat number) {
+    [self.button1 pp_fromNumber:0 toNumber:50 duration:1.5f format:^NSString *(CGFloat number) {
         
         return [NSString stringWithFormat:@"%.0f",number];
     }];
 
 }
 
-- (void)exampleButton2:(PPCounterAnimationType)animationType
+- (void)exampleButton2:(PPCounterAnimationOptions)animationOptions
 {
-    self.button2.counterAnimationType = animationType;
+    self.button2.animationOptions = animationOptions;
     
-    [self.button2 pp_fromNumber:0 toNumber:100 duration:1.5 animationType:animationType attributedFormatBlock:^NSAttributedString *(CGFloat number) {
+    [self.button2 pp_fromNumber:0 toNumber:100 duration:1.5 animationOptions:animationOptions attributedFormat:^NSAttributedString *(CGFloat number) {
         
         NSString *string = [NSString stringWithFormat:@"%ld%%",(NSInteger)number];
         NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string];
@@ -142,18 +142,18 @@
         [attributedString addAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:22],NSForegroundColorAttributeName:[UIColor orangeColor]} range:range];
         return attributedString;
         
-    } completeBlock:^{
+    } completion:^{
         
         [self.button2 setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
         
     }];
 }
 
-- (void)exampleButton3:(PPCounterAnimationType)animationType
+- (void)exampleButton3:(PPCounterAnimationOptions)animationOptions
 {
-    self.button3.counterAnimationType = animationType;
+    self.button3.animationOptions = animationOptions;
     
-    [self.button3 pp_fromNumber:0 toNumber:50 duration:1.5f formatBlock:^NSString *(CGFloat number) {
+    [self.button3 pp_fromNumber:0 toNumber:50 duration:1.5f format:^NSString *(CGFloat number) {
         
         NSNumberFormatter *formatter = [NSNumberFormatter new];
         formatter.numberStyle = NSNumberFormatterDecimalStyle;

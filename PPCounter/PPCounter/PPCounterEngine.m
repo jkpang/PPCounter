@@ -29,9 +29,9 @@ typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
 @property (nonatomic, assign) CFTimeInterval progressTime;
 
 /** 获取当前数字的Block*/
-@property (nonatomic, copy) PPCurrentNumberBlock numberBlock;
+@property (nonatomic, copy) PPCurrentNumberBlock currentNumber;
 /** 计数完成的Block*/
-@property (nonatomic, copy) PPCompletionBlock completionBlock;
+@property (nonatomic, copy) PPCompletionBlock completion;
 
 /** 动画函数*/
 @property PPCurrentBufferFunction currentBufferFunction;
@@ -44,7 +44,7 @@ typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
 {
     if (self = [super init])
     {
-        _currentBufferFunction = PPBufferFunctionEaseOut;
+        _currentBufferFunction = PPBufferFunctionEaseInOut;
     }
     return self;
 }
@@ -57,9 +57,9 @@ typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
 - (void)fromNumber:(CGFloat)starNumer
           toNumber:(CGFloat)endNumber
           duration:(CFTimeInterval)durationTime
-     animationType:(PPCounterAnimationType)animationType
-     currentNumber:(PPCurrentNumberBlock)numberBlock
-          complete:(PPCompletionBlock)completionBlock
+  animationOptions:(PPCounterAnimationOptions)animationOptions
+     currentNumber:(PPCurrentNumberBlock)currentNumber
+        completion:(PPCompletionBlock)completion
 {
     // 开始前清空定时器
     [self cleanTimer];
@@ -70,11 +70,11 @@ typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
     _durationTime = durationTime;
     
     // 设置缓冲动画类型
-    [self setAnimationType:animationType];
+    [self setanimationOptions:animationOptions];
     
     // 设置block回调函数
-    numberBlock ? _numberBlock = numberBlock : nil ;
-    completionBlock ? _completionBlock = completionBlock : nil ;
+    currentNumber ? _currentNumber = currentNumber : nil ;
+    completion ? _completion = completion : nil ;
     
     // 记录定时器运行前的时间
     _lastTime = CACurrentMediaTime();
@@ -99,28 +99,27 @@ typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
     if (_progressTime >= _durationTime)
     {
         [self cleanTimer];
-        _numberBlock ? _numberBlock(_endNumber) : nil ;
-        _completionBlock ? _completionBlock() : nil ;
+        _currentNumber ? _currentNumber(_endNumber) : nil ;
+        _completion ? _completion() : nil ;
         return;
     }
-    _numberBlock ? _numberBlock([self computeNumber]) : nil ;
-    
+    _currentNumber ? _currentNumber([self computeNumber]) : nil ;
 }
 
-- (void)setAnimationType:(PPCounterAnimationType)animationType
+- (void)setanimationOptions:(PPCounterAnimationOptions)animationOptions
 {
-    switch (animationType)
+    switch (animationOptions)
     {
-        case PPCounterAnimationTypeEaseOut:
-            _currentBufferFunction = PPBufferFunctionEaseOut;
-            break;
-        case PPCounterAnimationTypeEaseIn:
-            _currentBufferFunction = PPBufferFunctionEaseIn;
-            break;
-        case PPCounterAnimationTypeEaseInOut:
+        case PPCounterAnimationOptionCurveEaseInOut:
             _currentBufferFunction = PPBufferFunctionEaseInOut;
             break;
-        case PPCounterAnimationTypeLinear:
+        case PPCounterAnimationOptionCurveEaseIn:
+            _currentBufferFunction = PPBufferFunctionEaseIn;
+            break;
+        case PPCounterAnimationOptionCurveEaseOut:
+            _currentBufferFunction = PPBufferFunctionEaseOut;
+            break;
+        case PPCounterAnimationOptionCurveLinear:
             _currentBufferFunction = PPBufferFunctionLinear;
             break;
         default:

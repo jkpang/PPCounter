@@ -37,18 +37,18 @@
 /**
  在指定时间内数字从 numberA -> numberB
 
- @param starNumer       开始的数字
- @param endNumber       结束的数字
- @param duration        指定的时间
- @param animationType   动画类型
- @param numberBlock     当前数字的回调
- @param completionBlock 已完成的回调
+ @param starNumer           开始的数字
+ @param endNumber           结束的数字
+ @param duration            指定的时间
+ @param animationOptions    动画类型
+ @param currentNumber       当前数字的回调
+ @param completion          已完成的回调
  */
 - (void)fromNumber:(CGFloat)starNumer
           toNumber:(CGFloat)endNumber
           duration:(CFTimeInterval)duration
-     animationType:(PPCounterAnimationType)animationType
-     currentNumber:(PPCurrentNumberBlock)numberBlock
-          complete:(PPCompletionBlock)completionBlock;
+  animationOptions:(PPCounterAnimationOptions)animationOptions
+     currentNumber:(PPCurrentNumberBlock)currentNumber
+        completion:(PPCompletionBlock)completion;
 
 @end

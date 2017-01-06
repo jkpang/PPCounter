@@ -8,4 +8,4 @@
 
 #import "PPCounterConst.h"
 
-NSString *const kPPCounterAnimationType = @"kPPCounterAnimationType";
+NSString *const kPPCounterAnimationOptions = @"kPPCounterAnimationOptions";
