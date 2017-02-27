@@ -6,6 +6,24 @@
 //  Copyright © 2016年 AndyPang. All rights reserved.
 //
 
+/*
+ *********************************************************************************
+ *
+ *⭐️⭐️⭐️ 新建 PP-iOS学习交流群: 323408051 欢迎加入!!! ⭐️⭐️⭐️
+ *
+ * 如果您在使用 PPCounter 的过程中出现bug或有更好的建议,还请及时以下列方式联系我,我会及
+ * 时修复bug,解决问题.
+ *
+ * Weibo : CoderPang
+ * Email : jkpang@outlook.com
+ * QQ 群 : 323408051
+ * GitHub: https://github.com/jkpang
+ *
+ * 如果 PPCounter 好用,希望您能Star支持,你的 ⭐️ 是我持续更新的动力!
+ *
+ *********************************************************************************
+ */
+
 #import <UIKit/UIKit.h>
 #import "PPCounterEngine.h"
 
@@ -42,8 +60,7 @@ typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
 
 - (instancetype)init
 {
-    if (self = [super init])
-    {
+    if (self = [super init]) {
         _currentBufferFunction = PPBufferFunctionEaseInOut;
     }
     return self;
@@ -96,8 +113,7 @@ typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
     // 3.准备下一次的计算
     _lastTime = thisTime;
     
-    if (_progressTime >= _durationTime)
-    {
+    if (_progressTime >= _durationTime) {
         [self cleanTimer];
         _currentNumber ? _currentNumber(_endNumber) : nil ;
         _completion ? _completion() : nil ;
@@ -108,8 +124,7 @@ typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
 
 - (void)setanimationOptions:(PPCounterAnimationOptions)animationOptions
 {
-    switch (animationOptions)
-    {
+    switch (animationOptions) {
         case PPCounterAnimationOptionCurveEaseInOut:
             _currentBufferFunction = PPBufferFunctionEaseInOut;
             break;
@@ -162,12 +177,9 @@ CGFloat PPBufferFunctionEaseInOut(CGFloat p)
 {
     if(p == 0.0 || p == 1.0) return p;
     
-    if(p < 0.5)
-    {
+    if(p < 0.5) {
         return 0.5 * pow(2, (20 * p) - 10);
-    }
-    else
-    {
+    } else {
         return -0.5 * pow(2, (-20 * p) + 10) + 1;
     }
 }
