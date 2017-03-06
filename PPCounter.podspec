@@ -19,6 +19,7 @@ Pod::Spec.new do |s|
 
     s.source       = { :git => "https://github.com/jkpang/PPCounter.git", :tag => s.version.to_s }
 
+    s.source_files = 'PPCounter/PPCounter.h'
     s.ios.source_files   = 'PPCounter/PPCounter/Core/*.{h,m}', 'PPCounter/PPCounter/UIKit/*.{h,m}'
     s.osx.source_files   = 'PPCounter/PPCounter/Core/*.{h,m}'
 
