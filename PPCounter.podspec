@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '7.0'
 
-  s.summary      = "一款优雅的数字/金额增减动效控件,支持UILabel、UIButton显示"
+  s.summary      = "iOS与macOS中一款优雅的数字/金额增减动效控件"
 
   s.homepage     = "https://github.com/jkpang/PPCounter.git"
  
@@ -19,13 +19,18 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/jkpang/PPCounter.git", :tag => s.version.to_s }
 
-  s.source_files = "PPCounter/PPCounter.h"
+  s.source_files = 'PPCounter/PPCounter.h'
 
   s.subspec 'Core' do |core|
     core.osx.deployment_target = '10.10'
     core.ios.deployment_target = '7.0'
-    core.exclude_files = 'PPCounter/PPCounter/UILabel+PPCounter.{h,m}'
-    core.exclude_files = 'PPCounter/PPCounter/UIButton+PPCounter.{h,m}'
+    core.source_files = 'PPCounter/PPCounter/Core/*.{h,m}'
+    end
+
+  s.subspec 'UIKit' do |ui|
+    ui.ios.deployment_target = '7.0'
+    ui.source_files = 'PPCounter/PPCounter/UIKit/*.{h,m}'
+    ui.dependency  'PPCounter/PPCounter/Core'
     end
 
   s.requires_arc = true

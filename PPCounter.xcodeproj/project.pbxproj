@@ -14,10 +14,10 @@
 		226FB27A1DB2568D000BE4F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 226FB2791DB2568D000BE4F3 /* Assets.xcassets */; };
 		226FB27D1DB2568D000BE4F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226FB27B1DB2568D000BE4F3 /* LaunchScreen.storyboard */; };
 		226FB2881DB2568D000BE4F3 /* PPCounterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 226FB2871DB2568D000BE4F3 /* PPCounterTests.m */; };
-		226FB2951DB256CC000BE4F3 /* PPCounterEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 226FB2941DB256CC000BE4F3 /* PPCounterEngine.m */; };
-		226FB2981DB257E5000BE4F3 /* UILabel+PPCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 226FB2971DB257E5000BE4F3 /* UILabel+PPCounter.m */; };
-		22E75AD61DB51F950046E7D8 /* UIButton+PPCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E75AD51DB51F950046E7D8 /* UIButton+PPCounter.m */; };
-		22E75AD91DB520C80046E7D8 /* PPCounterConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E75AD81DB520C80046E7D8 /* PPCounterConst.m */; };
+		35E1DFB51E6D0790006C98F4 /* PPCounterConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E1DFB21E6D0790006C98F4 /* PPCounterConst.m */; };
+		35E1DFB61E6D0790006C98F4 /* PPCounterEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E1DFB41E6D0790006C98F4 /* PPCounterEngine.m */; };
+		35E1DFBC1E6D0796006C98F4 /* UIButton+PPCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E1DFB91E6D0796006C98F4 /* UIButton+PPCounter.m */; };
+		35E1DFBD1E6D0796006C98F4 /* UILabel+PPCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E1DFBB1E6D0796006C98F4 /* UILabel+PPCounter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +45,14 @@
 		226FB2831DB2568D000BE4F3 /* PPCounterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PPCounterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		226FB2871DB2568D000BE4F3 /* PPCounterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPCounterTests.m; sourceTree = "<group>"; };
 		226FB2891DB2568D000BE4F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		226FB2931DB256CC000BE4F3 /* PPCounterEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCounterEngine.h; sourceTree = "<group>"; };
-		226FB2941DB256CC000BE4F3 /* PPCounterEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCounterEngine.m; sourceTree = "<group>"; };
-		226FB2961DB257E5000BE4F3 /* UILabel+PPCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+PPCounter.h"; sourceTree = "<group>"; };
-		226FB2971DB257E5000BE4F3 /* UILabel+PPCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+PPCounter.m"; sourceTree = "<group>"; };
-		22E75AD41DB51F950046E7D8 /* UIButton+PPCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+PPCounter.h"; sourceTree = "<group>"; };
-		22E75AD51DB51F950046E7D8 /* UIButton+PPCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+PPCounter.m"; sourceTree = "<group>"; };
-		22E75AD71DB520C80046E7D8 /* PPCounterConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCounterConst.h; sourceTree = "<group>"; };
-		22E75AD81DB520C80046E7D8 /* PPCounterConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCounterConst.m; sourceTree = "<group>"; };
+		35E1DFB11E6D0790006C98F4 /* PPCounterConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCounterConst.h; sourceTree = "<group>"; };
+		35E1DFB21E6D0790006C98F4 /* PPCounterConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCounterConst.m; sourceTree = "<group>"; };
+		35E1DFB31E6D0790006C98F4 /* PPCounterEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCounterEngine.h; sourceTree = "<group>"; };
+		35E1DFB41E6D0790006C98F4 /* PPCounterEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCounterEngine.m; sourceTree = "<group>"; };
+		35E1DFB81E6D0796006C98F4 /* UIButton+PPCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+PPCounter.h"; sourceTree = "<group>"; };
+		35E1DFB91E6D0796006C98F4 /* UIButton+PPCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+PPCounter.m"; sourceTree = "<group>"; };
+		35E1DFBA1E6D0796006C98F4 /* UILabel+PPCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+PPCounter.h"; sourceTree = "<group>"; };
+		35E1DFBB1E6D0796006C98F4 /* UILabel+PPCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+PPCounter.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,16 +129,32 @@
 			isa = PBXGroup;
 			children = (
 				22489AE01DBCE75000EFE361 /* PPCounter.h */,
-				226FB2931DB256CC000BE4F3 /* PPCounterEngine.h */,
-				226FB2941DB256CC000BE4F3 /* PPCounterEngine.m */,
-				22E75AD71DB520C80046E7D8 /* PPCounterConst.h */,
-				22E75AD81DB520C80046E7D8 /* PPCounterConst.m */,
-				226FB2961DB257E5000BE4F3 /* UILabel+PPCounter.h */,
-				226FB2971DB257E5000BE4F3 /* UILabel+PPCounter.m */,
-				22E75AD41DB51F950046E7D8 /* UIButton+PPCounter.h */,
-				22E75AD51DB51F950046E7D8 /* UIButton+PPCounter.m */,
+				35E1DFB01E6D0790006C98F4 /* Core */,
+				35E1DFB71E6D0796006C98F4 /* UIKit */,
 			);
 			path = PPCounter;
+			sourceTree = "<group>";
+		};
+		35E1DFB01E6D0790006C98F4 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				35E1DFB11E6D0790006C98F4 /* PPCounterConst.h */,
+				35E1DFB21E6D0790006C98F4 /* PPCounterConst.m */,
+				35E1DFB31E6D0790006C98F4 /* PPCounterEngine.h */,
+				35E1DFB41E6D0790006C98F4 /* PPCounterEngine.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		35E1DFB71E6D0796006C98F4 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				35E1DFBA1E6D0796006C98F4 /* UILabel+PPCounter.h */,
+				35E1DFBB1E6D0796006C98F4 /* UILabel+PPCounter.m */,
+				35E1DFB81E6D0796006C98F4 /* UIButton+PPCounter.h */,
+				35E1DFB91E6D0796006C98F4 /* UIButton+PPCounter.m */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,13 +259,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22E75AD61DB51F950046E7D8 /* UIButton+PPCounter.m in Sources */,
+				35E1DFBD1E6D0796006C98F4 /* UILabel+PPCounter.m in Sources */,
+				35E1DFBC1E6D0796006C98F4 /* UIButton+PPCounter.m in Sources */,
 				226FB2751DB2568D000BE4F3 /* ViewController.m in Sources */,
 				226FB2721DB2568D000BE4F3 /* AppDelegate.m in Sources */,
-				226FB2951DB256CC000BE4F3 /* PPCounterEngine.m in Sources */,
+				35E1DFB51E6D0790006C98F4 /* PPCounterConst.m in Sources */,
+				35E1DFB61E6D0790006C98F4 /* PPCounterEngine.m in Sources */,
 				226FB26F1DB2568D000BE4F3 /* main.m in Sources */,
-				22E75AD91DB520C80046E7D8 /* PPCounterConst.m in Sources */,
-				226FB2981DB257E5000BE4F3 /* UILabel+PPCounter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
