@@ -1,6 +1,6 @@
 ![](https://github.com/jkpang/PPCounter/blob/master/Picture/PPCounter.png)
 
-![](https://img.shields.io/badge/platform-iOS-red.svg)   ![](https://img.shields.io/badge/language-Objective--C-orange.svg)  ![](https://img.shields.io/badge/pod-v0.2.0-blue.svg) ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)  [![](https://img.shields.io/badge/weibo-%40CoderPang-yellow.svg)](http://weibo.com/5743737098/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1)
+![](https://img.shields.io/badge/platform-iOS | macOS-red.svg)   ![](https://img.shields.io/badge/language-Objective--C-orange.svg)  ![](https://img.shields.io/badge/pod-v0.5.0-blue.svg) ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)  [![](https://img.shields.io/badge/weibo-%40CoderPang-yellow.svg)](http://weibo.com/5743737098/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1)
 
 一款使用简单的数字加减动画控件,支持UILabel、UIButton显示
 
@@ -20,6 +20,7 @@
 
 ##Requirements 要求
 * iOS 7+
+* macOS 10.10+
 * Xcode 8+
 
 ##Installation 安装
