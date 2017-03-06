@@ -29,23 +29,23 @@
 
 @implementation UILabel (PPCounter)
 
-- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration format:(PPFormatBlock)format
+- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(NSTimeInterval)duration format:(PPFormatBlock)format
 {
     [self pp_fromNumber:numberA toNumber:numberB duration:duration animationOptions:PPCounterAnimationOptionCurveEaseInOut format:format completion:nil];
 }
 
-- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration format:(PPFormatBlock)format completion:(PPCompletionBlock)completion
+- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(NSTimeInterval)duration format:(PPFormatBlock)format completion:(PPCompletionBlock)completion
 {
     [self pp_fromNumber:numberA toNumber:numberB duration:duration animationOptions:PPCounterAnimationOptionCurveEaseInOut format:format completion:completion];
 }
 
-- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration attributedFormat:(PPAttributedFormatBlock)attributedFormat
+- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(NSTimeInterval)duration attributedFormat:(PPAttributedFormatBlock)attributedFormat
 {
     
     [self pp_fromNumber:numberA toNumber:numberB duration:duration animationOptions:PPCounterAnimationOptionCurveEaseInOut attributedFormat:attributedFormat completion:nil];
 }
 
-- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(CFTimeInterval)duration attributedFormat:(PPAttributedFormatBlock)attributedFormat completion:(PPCompletionBlock)completion
+- (void)pp_fromNumber:(CGFloat)numberA toNumber:(CGFloat)numberB duration:(NSTimeInterval)duration attributedFormat:(PPAttributedFormatBlock)attributedFormat completion:(PPCompletionBlock)completion
 {
     [self pp_fromNumber:numberA toNumber:numberB duration:duration animationOptions:PPCounterAnimationOptionCurveEaseInOut attributedFormat:attributedFormat completion:completion];
 }
@@ -53,7 +53,7 @@
 #pragma mark - normal font
 - (void)pp_fromNumber:(CGFloat)numberA
              toNumber:(CGFloat)numberB
-             duration:(CFTimeInterval)duration
+             duration:(NSTimeInterval)duration
      animationOptions:(PPCounterAnimationOptions)animationOptions
                format:(PPFormatBlock)format
            completion:(PPCompletionBlock)completion
@@ -71,7 +71,7 @@
 #pragma mark - attributed font
 - (void)pp_fromNumber:(CGFloat)numberA
              toNumber:(CGFloat)numberB
-             duration:(CFTimeInterval)duration
+             duration:(NSTimeInterval)duration
      animationOptions:(PPCounterAnimationOptions)animationOptions
      attributedFormat:(PPAttributedFormatBlock)attributedFormat
            completion:(PPCompletionBlock)completion

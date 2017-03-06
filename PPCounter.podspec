@@ -19,9 +19,11 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/jkpang/PPCounter.git", :tag => s.version.to_s }
 
-  s.default_subspec = 'UIKit'
+  s.source_files = 'PPCounter/PPCounter/**/*.{h,m}'
 
   s.subspec 'Core' do |core|
+    core.osx.deployment_target = '10.10'
+    core.ios.deployment_target = '7.0'
     core.source_files = 'PPCounter/PPCounter/Core/*.{h,m}'
     end
 

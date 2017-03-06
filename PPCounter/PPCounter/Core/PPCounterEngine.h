@@ -46,7 +46,7 @@
  */
 - (void)fromNumber:(CGFloat)starNumer
           toNumber:(CGFloat)endNumber
-          duration:(CFTimeInterval)duration
+          duration:(NSTimeInterval)duration
   animationOptions:(PPCounterAnimationOptions)animationOptions
      currentNumber:(PPCurrentNumberBlock)currentNumber
         completion:(PPCompletionBlock)completion;
