@@ -28,8 +28,10 @@
 #define PPCounter_h
 
 #import "PPCounterEngine.h"
+
+#if TARGET_OS_IPHONE
 #import "UILabel+PPCounter.h"
 #import "UIButton+PPCounter.h"
-
+#endif
 
 #endif /* PPCounter_h */

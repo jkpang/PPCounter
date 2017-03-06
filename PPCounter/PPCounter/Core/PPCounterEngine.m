@@ -24,16 +24,25 @@
  *********************************************************************************
  */
 
-#import <UIKit/UIKit.h>
 #import "PPCounterEngine.h"
+#if TARGET_OS_IPHONE
+#import <UIKit/UIKit.h>
+#elif TARGET_OS_MAC
+#import <CoreGraphics/CoreGraphics.h>
+#endif
 
 /** 函数指针*/
 typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
 
 
 @interface PPCounterEngine ()
+
 /** 定时器*/
+#if TARGET_OS_IPHONE
 @property (nonatomic, strong) CADisplayLink *timer;
+#elif TARGET_OS_MAC
+@property (nonatomic, strong) NSTimer *timer;
+#endif
 /** 开始的数字*/
 @property (nonatomic, assign) CGFloat starNumber;
 /** 结束的数字*/
@@ -97,8 +106,13 @@ typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
     _lastTime = CACurrentMediaTime();
     
     // 实例化定时器
+#if TARGET_OS_IPHONE
     _timer = [CADisplayLink displayLinkWithTarget:self selector:@selector(changeNumber)];
     _timer.frameInterval = 2;
+#elif TARGET_OS_MAC
+    _timer = [NSTimer timerWithTimeInterval:1/30.f target:self selector:@selector(changeNumber) userInfo:nil repeats:YES];
+#endif
+    
     [_timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
     [_timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:UITrackingRunLoopMode];
     

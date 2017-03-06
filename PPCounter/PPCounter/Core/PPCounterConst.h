@@ -25,9 +25,9 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import <CoreGraphics/CoreGraphics.h>
 
-UIKIT_EXTERN NSString *const kPPCounterAnimationOptions;
+extern NSString *const kPPCounterAnimationOptions;
 
 typedef void(^PPCompletionBlock)(void);
 
