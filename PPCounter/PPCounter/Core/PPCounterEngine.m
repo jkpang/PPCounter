@@ -49,11 +49,11 @@ typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
 @property (nonatomic, assign) CGFloat endNumber;
 
 /** 动画的总持续时间*/
-@property (nonatomic, assign) CFTimeInterval durationTime;
+@property (nonatomic, assign) NSTimeInterval durationTime;
 /** 记录上一帧动画的时间*/
-@property (nonatomic, assign) CFTimeInterval lastTime;
+@property (nonatomic, assign) NSTimeInterval lastTime;
 /** 记录动画已持续的时间*/
-@property (nonatomic, assign) CFTimeInterval progressTime;
+@property (nonatomic, assign) NSTimeInterval progressTime;
 
 /** 获取当前数字的Block*/
 @property (nonatomic, copy) PPCurrentNumberBlock currentNumber;
@@ -82,7 +82,7 @@ typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
 
 - (void)fromNumber:(CGFloat)starNumer
           toNumber:(CGFloat)endNumber
-          duration:(CFTimeInterval)durationTime
+          duration:(NSTimeInterval)durationTime
   animationOptions:(PPCounterAnimationOptions)animationOptions
      currentNumber:(PPCurrentNumberBlock)currentNumber
         completion:(PPCompletionBlock)completion
@@ -103,25 +103,26 @@ typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
     completion ? _completion = completion : nil ;
     
     // 记录定时器运行前的时间
-    _lastTime = CACurrentMediaTime();
+    _lastTime = [NSDate timeIntervalSinceReferenceDate];
     
     // 实例化定时器
 #if TARGET_OS_IPHONE
     _timer = [CADisplayLink displayLinkWithTarget:self selector:@selector(changeNumber)];
     _timer.frameInterval = 2;
-#elif TARGET_OS_MAC
-    _timer = [NSTimer timerWithTimeInterval:1/30.f target:self selector:@selector(changeNumber) userInfo:nil repeats:YES];
-#endif
-    
     [_timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
     [_timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:UITrackingRunLoopMode];
+#elif TARGET_OS_MAC
+    _timer = [NSTimer timerWithTimeInterval:1/30.f target:self selector:@selector(changeNumber) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+#endif
+    
     
 }
 
 - (void)changeNumber
 {
     // 1.记录当前动画开始的时间
-    CFTimeInterval thisTime = CACurrentMediaTime();
+    NSTimeInterval thisTime = [NSDate timeIntervalSinceReferenceDate];
     // 2.计算动画已持续的时间量
     _progressTime = _progressTime + (thisTime - _lastTime);
     // 3.准备下一次的计算
