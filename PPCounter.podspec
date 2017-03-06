@@ -22,15 +22,14 @@ Pod::Spec.new do |s|
   s.source_files = 'PPCounter/PPCounter.h'
 
   s.subspec 'Core' do |core|
-    core.osx.deployment_target = '10.10'
-    core.ios.deployment_target = '7.0'
     core.source_files = 'PPCounter/PPCounter/Core/*.{h,m}'
     end
 
   s.subspec 'UIKit' do |ui|
     ui.ios.deployment_target = '7.0'
-    ui.source_files = 'PPCounter/PPCounter/UIKit/*.{h,m}'
     ui.dependency  'PPCounter/PPCounter/Core'
+    ui.dependency  'PPCounter/PPCounter.h'
+    ui.source_files = 'PPCounter/PPCounter/UIKit/*.{h,m}'
     end
 
   s.requires_arc = true
