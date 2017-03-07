@@ -32,7 +32,11 @@
 - (IBAction)start:(NSButton *)sender
 {
     self.numberLabel.textColor = [NSColor blackColor];
-    [[PPCounterEngine counterEngine] fromNumber:0 toNumber:999 duration:2.f animationOptions:PPCounterAnimationOptionCurveEaseOut currentNumber:^(CGFloat number) {
+    [[PPCounterEngine counterEngine] fromNumber:0
+                                       toNumber:999
+                                       duration:2.f
+                               animationOptions:PPCounterAnimationOptionCurveEaseOut
+                                  currentNumber:^(CGFloat number) {
         self.numberLabel.stringValue = [NSString stringWithFormat:@"%ld",(NSInteger)number];
     } completion:^{
         self.numberLabel.textColor = [NSColor redColor];
