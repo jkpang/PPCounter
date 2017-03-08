@@ -38,7 +38,7 @@
                                animationOptions:PPCounterAnimationOptionCurveEaseOut
                                   currentNumber:^(CGFloat number) {
         self.numberLabel.stringValue = [NSString stringWithFormat:@"%ld",(NSInteger)number];
-    } completion:^{
+    } completion:^(CGFloat endNumber) {
         self.numberLabel.textColor = [NSColor redColor];
     }];
 }

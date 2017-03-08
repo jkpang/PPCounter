@@ -12,8 +12,8 @@
 		22F0EA5D1E6DB33500FF7F7D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0EA5C1E6DB33500FF7F7D /* ViewController.m */; };
 		22F0EA5F1E6DB33500FF7F7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F0EA5E1E6DB33500FF7F7D /* Assets.xcassets */; };
 		22F0EA621E6DB33500FF7F7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F0EA601E6DB33500FF7F7D /* Main.storyboard */; };
-		22F0EA851E6DB40B00FF7F7D /* PPCounterConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0EA7C1E6DB40B00FF7F7D /* PPCounterConst.m */; };
-		22F0EA861E6DB40B00FF7F7D /* PPCounterEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0EA7E1E6DB40B00FF7F7D /* PPCounterEngine.m */; };
+		35F3C0DE1E6FDCBC0018D3C0 /* PPCounterConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F3C0D51E6FDCBC0018D3C0 /* PPCounterConst.m */; };
+		35F3C0DF1E6FDCBC0018D3C0 /* PPCounterEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F3C0D71E6FDCBC0018D3C0 /* PPCounterEngine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,11 +26,11 @@
 		22F0EA5E1E6DB33500FF7F7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22F0EA611E6DB33500FF7F7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22F0EA631E6DB33500FF7F7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		22F0EA7B1E6DB40B00FF7F7D /* PPCounterConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCounterConst.h; sourceTree = "<group>"; };
-		22F0EA7C1E6DB40B00FF7F7D /* PPCounterConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCounterConst.m; sourceTree = "<group>"; };
-		22F0EA7D1E6DB40B00FF7F7D /* PPCounterEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCounterEngine.h; sourceTree = "<group>"; };
-		22F0EA7E1E6DB40B00FF7F7D /* PPCounterEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCounterEngine.m; sourceTree = "<group>"; };
-		22F0EA7F1E6DB40B00FF7F7D /* PPCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCounter.h; sourceTree = "<group>"; };
+		35F3C0D41E6FDCBC0018D3C0 /* PPCounterConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCounterConst.h; sourceTree = "<group>"; };
+		35F3C0D51E6FDCBC0018D3C0 /* PPCounterConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCounterConst.m; sourceTree = "<group>"; };
+		35F3C0D61E6FDCBC0018D3C0 /* PPCounterEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCounterEngine.h; sourceTree = "<group>"; };
+		35F3C0D71E6FDCBC0018D3C0 /* PPCounterEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCounterEngine.m; sourceTree = "<group>"; };
+		35F3C0D81E6FDCBC0018D3C0 /* PPCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCounter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 		22F0EA541E6DB33500FF7F7D /* PPCounter MacOSDemo */ = {
 			isa = PBXGroup;
 			children = (
-				22F0EA791E6DB40B00FF7F7D /* PPCounter */,
+				35F3C0D21E6FDCBC0018D3C0 /* PPCounter */,
 				22F0EA551E6DB33500FF7F7D /* AppDelegate.h */,
 				22F0EA561E6DB33500FF7F7D /* AppDelegate.m */,
 				22F0EA5B1E6DB33500FF7F7D /* ViewController.h */,
@@ -84,22 +84,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		22F0EA791E6DB40B00FF7F7D /* PPCounter */ = {
+		35F3C0D21E6FDCBC0018D3C0 /* PPCounter */ = {
 			isa = PBXGroup;
 			children = (
-				22F0EA7F1E6DB40B00FF7F7D /* PPCounter.h */,
-				22F0EA7A1E6DB40B00FF7F7D /* Core */,
+				35F3C0D81E6FDCBC0018D3C0 /* PPCounter.h */,
+				35F3C0D31E6FDCBC0018D3C0 /* Core */,
 			);
-			path = PPCounter;
+			name = PPCounter;
+			path = ../../PPCounter;
 			sourceTree = "<group>";
 		};
-		22F0EA7A1E6DB40B00FF7F7D /* Core */ = {
+		35F3C0D31E6FDCBC0018D3C0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				22F0EA7B1E6DB40B00FF7F7D /* PPCounterConst.h */,
-				22F0EA7C1E6DB40B00FF7F7D /* PPCounterConst.m */,
-				22F0EA7D1E6DB40B00FF7F7D /* PPCounterEngine.h */,
-				22F0EA7E1E6DB40B00FF7F7D /* PPCounterEngine.m */,
+				35F3C0D41E6FDCBC0018D3C0 /* PPCounterConst.h */,
+				35F3C0D51E6FDCBC0018D3C0 /* PPCounterConst.m */,
+				35F3C0D61E6FDCBC0018D3C0 /* PPCounterEngine.h */,
+				35F3C0D71E6FDCBC0018D3C0 /* PPCounterEngine.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -177,8 +178,8 @@
 			files = (
 				22F0EA5D1E6DB33500FF7F7D /* ViewController.m in Sources */,
 				22F0EA5A1E6DB33500FF7F7D /* main.m in Sources */,
-				22F0EA851E6DB40B00FF7F7D /* PPCounterConst.m in Sources */,
-				22F0EA861E6DB40B00FF7F7D /* PPCounterEngine.m in Sources */,
+				35F3C0DE1E6FDCBC0018D3C0 /* PPCounterConst.m in Sources */,
+				35F3C0DF1E6FDCBC0018D3C0 /* PPCounterEngine.m in Sources */,
 				22F0EA571E6DB33500FF7F7D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
