@@ -92,10 +92,8 @@
         [attributedString addAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:22],NSForegroundColorAttributeName:[UIColor brownColor]} range:range];
         return attributedString;
         
-    } completion:^{
-        
+    } completion:^(CGFloat endNumber) {
         self.label2.textColor = [UIColor redColor];
-        
     }];
     
 }
@@ -142,10 +140,8 @@
         [attributedString addAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:22],NSForegroundColorAttributeName:[UIColor orangeColor]} range:range];
         return attributedString;
         
-    } completion:^{
-        
+    } completion:^(CGFloat endNumber) {
         [self.button2 setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
-        
     }];
 }
 

@@ -96,8 +96,8 @@
 		22F0EA691E6DB36400FF7F7D /* PPCounter */ = {
 			isa = PBXGroup;
 			children = (
-				22F0EA6A1E6DB36400FF7F7D /* Core */,
 				22F0EA6F1E6DB36400FF7F7D /* PPCounter.h */,
+				22F0EA6A1E6DB36400FF7F7D /* Core */,
 				22F0EA701E6DB36400FF7F7D /* UIKit */,
 			);
 			path = PPCounter;
