@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
     s.name         = "PPCounter"
 
-    s.version      = "0.5.0"
+    s.version      = "0.5.1"
 
     s.osx.deployment_target = '10.10'
 
