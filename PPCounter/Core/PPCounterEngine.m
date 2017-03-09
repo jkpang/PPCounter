@@ -28,7 +28,7 @@
 #if TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
 #elif TARGET_OS_MAC
-#import <CoreGraphics/CoreGraphics.h>
+#import <Cocoa/Cocoa.h>
 #endif
 
 /** 函数指针*/
@@ -49,11 +49,11 @@ typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
 @property (nonatomic, assign) CGFloat endNumber;
 
 /** 动画的总持续时间*/
-@property (nonatomic, assign) NSTimeInterval durationTime;
+@property (nonatomic, assign) CFTimeInterval durationTime;
 /** 记录上一帧动画的时间*/
-@property (nonatomic, assign) NSTimeInterval lastTime;
+@property (nonatomic, assign) CFTimeInterval lastTime;
 /** 记录动画已持续的时间*/
-@property (nonatomic, assign) NSTimeInterval progressTime;
+@property (nonatomic, assign) CFTimeInterval progressTime;
 
 /** 获取当前数字的Block*/
 @property (nonatomic, copy) PPCurrentNumberBlock currentNumber;
@@ -82,7 +82,7 @@ typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
 
 - (void)fromNumber:(CGFloat)starNumer
           toNumber:(CGFloat)endNumber
-          duration:(NSTimeInterval)durationTime
+          duration:(CFTimeInterval)durationTime
   animationOptions:(PPCounterAnimationOptions)animationOptions
      currentNumber:(PPCurrentNumberBlock)currentNumber
         completion:(PPCompletionBlock)completion
@@ -110,7 +110,7 @@ typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
     completion ? _completion = completion : nil ;
     
     // 记录定时器运行前的时间
-    _lastTime = [NSDate timeIntervalSinceReferenceDate];
+    _lastTime = CACurrentMediaTime();
     
     // 实例化定时器
 #if TARGET_OS_IPHONE
@@ -129,7 +129,7 @@ typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
 - (void)changeNumber
 {
     // 1.记录当前动画开始的时间
-    NSTimeInterval thisTime = [NSDate timeIntervalSinceReferenceDate];
+    CFTimeInterval thisTime = CACurrentMediaTime();
     // 2.计算动画已持续的时间量
     _progressTime = _progressTime + (thisTime - _lastTime);
     // 3.准备下一次的计算

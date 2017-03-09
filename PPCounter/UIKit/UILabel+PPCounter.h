@@ -45,7 +45,7 @@
  */
 - (void)pp_fromNumber:(CGFloat)numberA
              toNumber:(CGFloat)numberB
-             duration:(NSTimeInterval)duration
+             duration:(CFTimeInterval)duration
                format:(PPFormatBlock)format;
 
 /**
@@ -60,7 +60,7 @@
  */
 - (void)pp_fromNumber:(CGFloat)numberA
              toNumber:(CGFloat)numberB
-             duration:(NSTimeInterval)duration
+             duration:(CFTimeInterval)duration
                format:(PPFormatBlock)format
            completion:(PPCompletionBlock)completion;
 
@@ -78,7 +78,7 @@
  */
 - (void)pp_fromNumber:(CGFloat)numberA
              toNumber:(CGFloat)numberB
-             duration:(NSTimeInterval)duration
+             duration:(CFTimeInterval)duration
      animationOptions:(PPCounterAnimationOptions)animationOptions
                format:(PPFormatBlock)format
            completion:(PPCompletionBlock)completion;
@@ -96,7 +96,7 @@
  */
 - (void)pp_fromNumber:(CGFloat)numberA
              toNumber:(CGFloat)numberB
-             duration:(NSTimeInterval)duration
+             duration:(CFTimeInterval)duration
      attributedFormat:(PPAttributedFormatBlock)attributedFormat;
 
 /**
@@ -112,7 +112,7 @@
 
 - (void)pp_fromNumber:(CGFloat)numberA
              toNumber:(CGFloat)numberB
-             duration:(NSTimeInterval)duration
+             duration:(CFTimeInterval)duration
      attributedFormat:(PPAttributedFormatBlock)attributedFormat
            completion:(PPCompletionBlock)completion;
 
@@ -130,7 +130,7 @@
  */
 - (void)pp_fromNumber:(CGFloat)numberA
              toNumber:(CGFloat)numberB
-             duration:(NSTimeInterval)duration
+             duration:(CFTimeInterval)duration
      animationOptions:(PPCounterAnimationOptions)animationOptions
      attributedFormat:(PPAttributedFormatBlock)attributedFormat
            completion:(PPCompletionBlock)completion;
