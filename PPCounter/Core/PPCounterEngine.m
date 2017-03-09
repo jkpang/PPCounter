@@ -41,7 +41,7 @@ typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
 #if TARGET_OS_IPHONE
 @property (nonatomic, strong) CADisplayLink *timer;
 #elif TARGET_OS_MAC
-@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) dispatch_source_t timer;
 #endif
 /** 开始的数字*/
 @property (nonatomic, assign) CGFloat starNumber;
@@ -119,8 +119,12 @@ typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
     [_timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
     [_timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:UITrackingRunLoopMode];
 #elif TARGET_OS_MAC
-    _timer = [NSTimer timerWithTimeInterval:1/30.f target:self selector:@selector(changeNumber) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+    _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_main_queue());
+    dispatch_source_set_timer(_timer, DISPATCH_TIME_NOW, 1/30.f * NSEC_PER_SEC, 0 * NSEC_PER_SEC);
+    dispatch_source_set_event_handler(_timer, ^{
+        [self changeNumber];
+    });
+    dispatch_resume(_timer);
 #endif
     
     
@@ -178,7 +182,12 @@ typedef CGFloat (*PPCurrentBufferFunction)(CGFloat);
  */
 - (void)cleanTimer
 {
+    if (!_timer) {return;}
+#if TARGET_OS_IPHONE
     [_timer invalidate];
+#elif TARGET_OS_MAC
+    dispatch_source_cancel(_timer);
+#endif
     _timer = nil;
     _progressTime = 0;
 }
