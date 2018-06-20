@@ -118,6 +118,10 @@ then
 * 2016.10.23(tag:0.1.1)--优化代码结构与调用API方法;
 * 2016.10.19(tag:0.1.0)--初始化到CocoaPods;
 
+## 我的App <-> My APP
+- [PPHub](https://github.com/jkpang/PPHub-Feedback)：一个简洁漂亮的 GitHub iOS客户端 <-> A simple and beautiful GitHub iOS client   
+[![App_Store](https://github.com/jkpang/PPHub-Feedback/blob/master/Resource/Download_on_the_App_Store_135x40.svg)](https://itunes.apple.com/cn/app/PPHub%20For%20GitHub/id1314212521?mt=8)
+
 ## 联系方式:
 * Weibo : [@jkpang-庞](http://weibo.com/5743737098/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1)
 * Email : jkpang@outlook.com
